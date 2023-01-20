@@ -40,8 +40,6 @@ coloring()
 
 
 
-
-
 //Функция для раскраски ходов
 function reddish() {    
 
@@ -84,12 +82,6 @@ function reddish() {
 
 
 
-
-
-
-
-
-
 tog = 1
 
 document.querySelectorAll('.box').forEach(item => {
@@ -100,12 +92,19 @@ document.querySelectorAll('.box').forEach(item => {
 
         //Для замены ячейки 
 
-        if (item.style.backgroundColor == 'green' && item.innerText.length == 0) { //если фон зеленый и в ячейке пусто
+        if (item.style.backgroundColor == 'green' /*&& item.innerText.length == 0*/) { //если фон зеленый и в ячейке пусто
             tog = tog + 1
             document.getElementById(redId).innerText = ''
         }
 
-        else if (item.style.backgroundColor == 'green' && item.innerText.length !== 0) { //если фон зеленый и в ячейке есть шашка
+        /*else if (item.style.backgroundColor == 'red') {
+            document.getElementById(redId).innerText = ''
+            if (aside < 8 && document.getElementById(`b${a - 100 + 1}`).innerText.length == 0) {
+                document.getElementById(`b${a - 200 + 2}`).backgroundColor = 'green'
+            }
+        }*/
+
+        /*else if (item.style.backgroundColor == 'green' && item.innerText.length !== 0) { //если фон зеленый и в ячейке есть шашка
 
             
             document.querySelectorAll('.box').forEach(i => {
@@ -122,11 +121,9 @@ document.querySelectorAll('.box').forEach(item => {
                     
                 }
             })
-        }
+        }*/
 
         
-
-
 
         getId = item.id              //(b801)
         arr = Array.from(getId)      //["b", "8", "0", "1"]
@@ -138,63 +135,92 @@ document.querySelectorAll('.box').forEach(item => {
 
 
 
+
+        /*console.log('getId =', getId)
+        console.log('aside = ', aside)
+        console.log('aup = ', aup)
+        console.log('a = ', a)*/
+
+
+
         // Функция для отображения доступного пути
+
+        
 
         function whosTurn(toggle) {
 
             
-            // CHECKER
+            //Шашка
 
             if (item.innerText == `${toggle}checker`) {
 
-                
-                if (tog % 2 == 0 && aup > 100) {  // для черных
+                //Для черных
+                if (tog % 2 == 0 && aup > 100) {
 
                     redId = ""
 
-                    if (aside < 8 && document.getElementById(`b${a - 100 + 1}`).innerText.length == 0) { //вниз и вправо(для пустой ячейки)
+                    if (aside < 8 && document.getElementById(`b${a - 100 + 1}`).innerText.length == 0) { //вниз и вправо(для пустой ячейки) нужно дописать условие проверки на красную клетку
                         document.getElementById(`b${a - 100 + 1}`).style.backgroundColor = 'green'
                     }
-                    if (aside < 7 && document.getElementById(`b${a - 100 + 1}`).innerText !== 'Bchecker' && document.getElementById(`b${a - 100 + 1}`).innerText.length !== 0 && document.getElementById(`b${a - 200 + 2}`).innerText.length == 0){ //для того чтобы рубить
+                    if (aside < 7 && document.getElementById(`b${a - 100 + 1}`).innerText !== 'Bchecker' && document.getElementById(`b${a - 100 + 1}`).innerText.length !== 0 && document.getElementById(`b${a - 200 + 2}`).innerText.length == 0){ //рубить вниз и вправо
                         redId = (`b${a - 100 + 1}`)
                         document.getElementById(`b${a - 100 + 1}`).style.backgroundColor = 'red'
                         document.getElementById(`b${a - 200 + 2}`).style.backgroundColor = 'green'
                     }
+                    /*if (aside < 7 && document.getElementById(`b${a + 100 + 1}`).innerText !== 'Bchecker' && document.getElementById(`b${a + 100 + 1}`).innerText.length !== 0 && document.getElementById(`b${a + 200 + 2}`).innerText.length == 0){ //рубить вверх и вправо
+                        redId = (`b${a + 100 + 1}`)
+                        document.getElementById(`b${a + 100 + 1}`).style.backgroundColor = 'red'
+                        document.getElementById(`b${a + 200 + 2}`).style.backgroundColor = 'green'
+                    }*/
 
-
-                    if(aside > 1 && document.getElementById(`b${a - 100 - 1}`).innerText.length == 0) { //вниз и влево(для пустой ячейки)
+                    if(aside > 1 && document.getElementById(`b${a - 100 - 1}`).innerText.length == 0) { //вниз и влево(для пустой ячейки) нужно дописать условие проверки на красную клетку
                         document.getElementById(`b${a - 100 - 1}`).style.backgroundColor = 'green'
                     }
-                    if (aside > 2 && document.getElementById(`b${a - 100 - 1}`).innerText !== 'Bchecker' && document.getElementById(`b${a - 100 - 1}`).innerText.length !== 0 && document.getElementById(`b${a - 200 - 2}`).innerText.length == 0){ //для того чтобы рубить
+                    if (aside > 2 && document.getElementById(`b${a - 100 - 1}`).innerText !== 'Bchecker' && document.getElementById(`b${a - 100 - 1}`).innerText.length !== 0 && document.getElementById(`b${a - 200 - 2}`).innerText.length == 0){ //рубить вниз и влево
                         redId = (`b${a - 100 - 1}`)
                         document.getElementById(`b${a - 100 - 1}`).style.backgroundColor = 'red'
                         document.getElementById(`b${a - 200 - 2}`).style.backgroundColor = 'green'
                     }
+                    /*if (aside > 2 && document.getElementById(`b${a + 100 - 1}`).innerText !== 'Bchecker' && document.getElementById(`b${a + 100 - 1}`).innerText.length !== 0 && document.getElementById(`b${a + 200 - 2}`).innerText.length == 0){ //рубить вверх и влево
+                        redId = (`b${a + 100 - 1}`)
+                        document.getElementById(`b${a + 100 - 1}`).style.backgroundColor = 'red'
+                        document.getElementById(`b${a + 200 - 2}`).style.backgroundColor = 'green'
+                    }*/
                 }
 
 
-                if (tog % 2 !== 0 && aup < 800) { // для белых
+                //Для белых
+                if (tog % 2 !== 0 && aup < 800) {
 
                     redId = ""
 
                     if (aside < 8 && document.getElementById(`b${a + 100 + 1}`).innerText.length == 0) { //вверх и вправо(для пустой ячейки)
                         document.getElementById(`b${a + 100 + 1}`).style.backgroundColor = 'green'
                     }
-                    if (aside < 7 && document.getElementById(`b${a + 100 + 1}`).innerText !== 'Wchecker' && document.getElementById(`b${a + 100 + 1}`).innerText.length !== 0 && document.getElementById(`b${a + 200 + 2}`).innerText.length == 0){ //для того чтобы рубить
+                    if (aside < 7 && document.getElementById(`b${a + 100 + 1}`).innerText !== 'Wchecker' && document.getElementById(`b${a + 100 + 1}`).innerText.length !== 0 && document.getElementById(`b${a + 200 + 2}`).innerText.length == 0){ //рубить вверх и вправо
                         redId = (`b${a + 100 + 1}`)
                         document.getElementById(`b${a + 100 + 1}`).style.backgroundColor = 'red'
                         document.getElementById(`b${a + 200 + 2}`).style.backgroundColor = 'green'
                     }
-
+                    /*if (aside < 7 && document.getElementById(`b${a - 100 + 1}`).innerText !== 'Wchecker' && document.getElementById(`b${a - 100 + 1}`).innerText.length !== 0 && document.getElementById(`b${a - 200 + 2}`).innerText.length == 0){ //рубить вниз и вправо
+                        redId = (`b${a - 100 + 1}`)
+                        document.getElementById(`b${a - 100 + 1}`).style.backgroundColor = 'red'
+                        document.getElementById(`b${a - 200 + 2}`).style.backgroundColor = 'green'
+                    }*/
 
                     if (aside > 1 && document.getElementById(`b${a + 100 - 1}`).innerText.length == 0) { //вверх и влево(для пустой ячейки)
                         document.getElementById(`b${a + 100 - 1}`).style.backgroundColor = 'green' 
                     }
-                    if (aside > 2 && document.getElementById(`b${a + 100 - 1}`).innerText !== 'Wchecker' && document.getElementById(`b${a + 100 - 1}`).innerText.length !== 0 && document.getElementById(`b${a + 200 - 2}`).innerText.length == 0){ //для того чтобы рубить
+                    if (aside > 2 && document.getElementById(`b${a + 100 - 1}`).innerText !== 'Wchecker' && document.getElementById(`b${a + 100 - 1}`).innerText.length !== 0 && document.getElementById(`b${a + 200 - 2}`).innerText.length == 0){ //рубить вверх и влево
                         redId = (`b${a + 100 - 1}`)
                         document.getElementById(`b${a + 100 - 1}`).style.backgroundColor = 'red'
                         document.getElementById(`b${a + 200 - 2}`).style.backgroundColor = 'green'
                     }
+                    /*if (aside > 2 && document.getElementById(`b${a - 100 - 1}`).innerText !== 'Wchecker' && document.getElementById(`b${a - 100 - 1}`).innerText.length !== 0 && document.getElementById(`b${a - 200 - 2}`).innerText.length == 0){ //рубить вниз и влево
+                        redId = (`b${a - 100 - 1}`)
+                        document.getElementById(`b${a - 100 - 1}`).style.backgroundColor = 'red'
+                        document.getElementById(`b${a - 200 - 2}`).style.backgroundColor = 'green'
+                    }*/
 
                 }
 
@@ -242,11 +268,11 @@ document.querySelectorAll('.box').forEach(item => {
         if (numB == 0 || numW == 0) {
             setTimeout(() => { 
                 if (numW > 1) {
-                    alert('White Wins !!')
+                    alert('Белые победили!')
                     location.reload()
                 }
                 else if (numB > 1) {
-                    alert('Black Wins !!')
+                    alert('Черные победили!')
                     location.reload()
                 }
             }, 100)
@@ -295,7 +321,7 @@ document.querySelectorAll('.box').forEach(hathiTest => {
 
 
 
-document.querySelectorAll('.box').forEach(hathiTest => {
+/*document.querySelectorAll('.box').forEach(hathiTest => {
 
     hathiTest.addEventListener('click', function () {
 
@@ -323,7 +349,7 @@ document.querySelectorAll('.box').forEach(hathiTest => {
 
     })
 
-})
+})*/
 
 
 
