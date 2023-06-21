@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #242582;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+  display: button;
+  height: 5vmin;
+  width: 12vmin;
+  border-radius: 5vmin;
+  color: #ffffff;
+  background-color: #553D67;
+  font-size: 3vmin;
+  cursor: pointer;
+  position:absolute; top: 1vmin;; left: 1vmin;;
+}
+
+.head {
+  margin-top: 2%;
+}
+
+.head2 {
+  margin-top: 0.8%;
+  margin-left: 1%;
+}
+
+.text {
+  margin-top: 0.2%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+}

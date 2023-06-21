@@ -8,8 +8,10 @@ body {
     display: grid;
     place-items: center;
     overflow-x: hidden;
-    background: radial-gradient(circle farthest-corner at 100px 50px, #FBF2EB, #352A3B);
+    background-color: #242582;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 
 h1 {
     margin: 10px;
@@ -39,5 +41,17 @@ li {
 
 #tog {
     margin: 10px 0px;
+    color: #ffffff;
 }
 
+.button {
+  display: button;
+  height: 5vmin;
+  width: 12vmin;
+  border-radius: 5vmin;
+  color: #ffffff;
+  background-color: #553D67;
+  font-size: 3vmin;
+  cursor: pointer;
+  position:absolute; top: 1vmin;; left: 1vmin;;
+}
