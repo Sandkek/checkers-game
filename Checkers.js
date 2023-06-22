@@ -146,16 +146,16 @@ document.querySelectorAll('.box').forEach(item => {
                         redId = (`b${a + 100 + 1}`)
                         document.getElementById(`b${a + 100 + 1}`).style.backgroundColor = 'red'
                         document.getElementById(`b${a + 200 + 2}`).style.backgroundColor = 'green'
-                        document.getElementById(`b${a - 100 + 1}`).style.backgroundColor = lightbox
-                        document.getElementById(`b${a - 100 - 1}`).style.backgroundColor = lightbox
+                        document.getElementById(`b${a - 100 + 1}`).style.backgroundColor = darkbox
+                        document.getElementById(`b${a - 100 - 1}`).style.backgroundColor = darkbox
                     }
 
                     if (aside > 1 && document.getElementById(`b${a + 100 - 1}`).innerText != 'Bchecker' && document.getElementById(`b${a + 100 - 1}`).innerText != 'Bqueen' && document.getElementById(`b${a + 100 - 1}`).innerText.length != 0 && document.getElementById(`b${a + 200 - 2}`).innerText.length == 0){ //рубить вверх и влево
                         redId = (`b${a + 100 - 1}`)
                         document.getElementById(`b${a + 100 - 1}`).style.backgroundColor = 'red'
                         document.getElementById(`b${a + 200 - 2}`).style.backgroundColor = 'green'
-                        document.getElementById(`b${a - 100 + 1}`).style.backgroundColor = lightbox
-                        document.getElementById(`b${a - 100 - 1}`).style.backgroundColor = lightbox
+                        document.getElementById(`b${a - 100 + 1}`).style.backgroundColor = darkbox
+                        document.getElementById(`b${a - 100 - 1}`).style.backgroundColor = darkbox
                     }
                 }
 
@@ -196,16 +196,16 @@ document.querySelectorAll('.box').forEach(item => {
                         redId = (`b${a - 100 + 1}`)
                         document.getElementById(`b${a - 100 + 1}`).style.backgroundColor = 'red'
                         document.getElementById(`b${a - 200 + 2}`).style.backgroundColor = 'green'
-                        document.getElementById(`b${a + 100 - 1}`).style.backgroundColor = lightbox
-                        document.getElementById(`b${a + 100 + 1}`).style.backgroundColor = lightbox
+                        document.getElementById(`b${a + 100 - 1}`).style.backgroundColor = darkbox
+                        document.getElementById(`b${a + 100 + 1}`).style.backgroundColor = darkbox
                     }
                     
                      if (aside > 1 && document.getElementById(`b${a - 100 - 1}`).innerText != 'Wchecker' && document.getElementById(`b${a - 100 - 1}`).innerText != 'Wqueen' && document.getElementById(`b${a - 100 - 1}`).innerText.length != 0 && document.getElementById(`b${a - 200 - 2}`).innerText.length == 0){ //рубить вниз и влево
                         redId = (`b${a - 100 - 1}`)
                         document.getElementById(`b${a - 100 - 1}`).style.backgroundColor = 'red'
                         document.getElementById(`b${a - 200 - 2}`).style.backgroundColor = 'green'
-                        document.getElementById(`b${a + 100 - 1}`).style.backgroundColor = lightbox
-                        document.getElementById(`b${a + 100 + 1}`).style.backgroundColor = lightbox
+                        document.getElementById(`b${a + 100 - 1}`).style.backgroundColor = darkbox
+                        document.getElementById(`b${a + 100 + 1}`).style.backgroundColor = darkbox
                     }
                 }
 
